@@ -1,0 +1,9 @@
+{
+  "name": "1955_People",
+  "description": "Full_Mean_1955_People",
+  "dependencies": {
+    "body-parser": "1.14.2",
+    "express": "~4.10.0",
+    "mongoose": "^4.4.10"
+  }
+}
