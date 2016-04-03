@@ -13,7 +13,7 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
  <script type="text/javascript" src="/static/script.js"></script>
 </head>
-<body ng-app='myApp'>
+<body ng-app='myApp' ng-controller='PeopleController'>
 	<div class="container col-sm-12">
 		<h1 class="text-left text-default"><strong>1955 Dashboard</strong></h1>
 		<hr>
@@ -22,7 +22,7 @@
 			<div class="form-group col-sm-offset-10">
 				 <input type="text" ng-model="new_people.name" placeholder="name" class="form-control">
 			</div>
-				 <button type="submit" class="btn btn-primary" ng-click=addPeople()>Submit</button>
+				 <button type="submit" class="btn btn-primary" ng-click="addPeople()">Submit</button>
 			</div>
 	</div>
 	<div class="container col-sm-12">
@@ -33,10 +33,10 @@
 					<th class="col-sm-4">Action</th>
 				</tr>
 			</thead>
-			<tbody ng-repeat='p in people'>
+			<tbody ng-repeat='p in peoples'>
 				<tr>
 					<td class="col-sm-8">{{p.name}}</td>
-					<td class="col-sm-8"><button class="btn -btn-danger" ng-click=removePeople($index)>Delete</button></td>
+					<td class="col-sm-8"><button class="btn btn-danger" ng-click='removePeople(p._id)'>Delete</button></td>
 				</tr>
 			</tbody>
 		</table>
