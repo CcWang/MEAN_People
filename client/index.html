@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1955 People</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ <script type="text/javascript" src="/static/script.js"></script>
+</head>
+<body ng-app='myApp'>
+	<div class="container col-sm-12">
+		<h1 class="text-left text-default"><strong>1955 Dashboard</strong></h1>
+		<hr>
+		<div class="text-right">
+			<h4><u>Add people who were born in 1955!</u></h4>
+			<div class="form-group col-sm-offset-10">
+				 <input type="text" ng-model="new_people.name" placeholder="name" class="form-control">
+			</div>
+				 <button type="submit" class="btn btn-primary" ng-click=addPeople()>Submit</button>
+			</div>
+	</div>
+	<div class="container col-sm-12">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th class="col-sm-8">Name</th>
+					<th class="col-sm-4">Action</th>
+				</tr>
+			</thead>
+			<tbody ng-repeat='p in people'>
+				<tr>
+					<td class="col-sm-8">{{p.name}}</td>
+					<td class="col-sm-8"><button class="btn -btn-danger" ng-click=removePeople($index)>Delete</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
